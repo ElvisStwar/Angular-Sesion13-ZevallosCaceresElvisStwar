@@ -1,1 +1,37 @@
-<p>home works!</p>
+<div>
+    <div>
+        <h3>Uso de Pipes</h3>
+    </div>
+    <div>
+        <label for="">Valor: </label>
+        <input type="text" [(ngModel)]="nombre">
+    </div>
+    <div>
+        <h3>
+            Respuesta: {{nombre | uppercase}}
+        </h3>
+    </div>
+</div>
+
+<div>
+    <div>
+        <h3>CURRENCY PIPES</h3>
+    </div>
+    <div>
+        <label for="">Valor: </label>
+        <input type="text" [(ngModel)]="valor">
+        <div>
+            <select [(ngModel)]="moneda">
+                <option value="USD">Dolar</option>
+                <option value="JPY">Yen</option>
+                <option value="EUR">Euro</option>
+                <option value="BRL">Real</option>
+            </select>
+        </div>
+    </div>
+    <div>
+        <h3>
+            Respuesta: <span *ngIf="moneda.length>0">{{valor|currency:moneda}}</span>
+        </h3>
+    </div>
+</div>
