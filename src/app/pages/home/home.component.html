@@ -1,37 +1,45 @@
-<div>
-    <div>
-        <h3>Uso de Pipes</h3>
-    </div>
-    <div>
-        <label for="">Valor: </label>
-        <input type="text" [(ngModel)]="nombre">
-    </div>
-    <div>
-        <h3>
-            Respuesta: {{nombre | uppercase}}
-        </h3>
+<div class="row justify-content-center mt-5">
+    <div class="col-4 border">
+        <div class="p-3">
+            <div>
+                <h3>Uso de Pipes</h3>
+            </div>
+            <div class="p-2">
+                <label for="" class="mb-2 h4">Valor: </label>
+                <input class="form-control" type="text" [(ngModel)]="nombre" placeholder="Ingrese palabra">
+            </div>
+            <div>
+                <h4>
+                    Respuesta: {{nombre | uppercase}}
+                </h4>
+            </div>
+        </div>
     </div>
 </div>
 
-<div>
-    <div>
-        <h3>CURRENCY PIPES</h3>
-    </div>
-    <div>
-        <label for="">Valor: </label>
-        <input type="text" [(ngModel)]="valor">
-        <div>
-            <select [(ngModel)]="moneda">
-                <option value="USD">Dolar</option>
-                <option value="JPY">Yen</option>
-                <option value="EUR">Euro</option>
-                <option value="BRL">Real</option>
-            </select>
+<div class="row justify-content-center mt-5">
+    <div class="col-4 border">
+        <div class="p-3">       
+            <div>
+                <h3>CURRENCY PIPES</h3>
+            </div>
+            <div class="p-2">
+                <label for="" class="mb-2 h4">Valor: </label>
+                <input class="form-control mb-2" type="text" [(ngModel)]="valor" placeholder="Ingrese valor">
+                <div>
+                    <select [(ngModel)]="moneda" class="form-select" placeholder="hola">
+                        <option value="USD">Dolar</option>
+                        <option value="JPY">Yen</option>
+                        <option value="EUR">Euro</option>
+                        <option value="BRL">Real</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <h4>
+                    Respuesta: <span *ngIf="moneda.length>0">{{valor|currency:moneda}}</span>
+                </h4>
+            </div>
         </div>
-    </div>
-    <div>
-        <h3>
-            Respuesta: <span *ngIf="moneda.length>0">{{valor|currency:moneda}}</span>
-        </h3>
     </div>
 </div>
