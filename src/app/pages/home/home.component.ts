@@ -8,6 +8,6 @@ import { Component } from '@angular/core';
 export class HomeComponent {
   nombre!:string;
   valor!:number;
-  moneda!:string;
-  tipo="S/"
+  moneda = "";
+  otro!:string
 }
